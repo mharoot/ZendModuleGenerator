@@ -1,5 +1,5 @@
 # ZendModuleGenerator
-Assuming you have a database set up like the one from the tutorial.  You 
+Assuming you have a database set up like the one from this tutorial [https://docs.zendframework.com/tutorials/getting-started/skeleton-application/].  You 
 can use this tool to quickly develop web applications and generate a working database.  Just following the conventions
 and demonstrated in this tutorial and you can create skeleton like web applications fast in one command.
 This tool can literally recreate the skeleton app in this tutorial [https://docs.zendframework.com/tutorials/getting-started/skeleton-application/].
