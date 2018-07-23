@@ -18,7 +18,7 @@ class ZendFormCreator extends DB {
         printf("class %sForm extends Form\n{\n", $module);
         printf("\tpublic function __construct(\$name = null) {\n");
         printf("\t\t// We will ignore the name provided to the constructor\n");
-        printf("\t\tparent::_construct('%s');\n\n", $this->tablename);
+        printf("\t\tparent::__construct('%s');\n\n", $this->tablename);
     }
 
     private function footer() {
