@@ -242,7 +242,7 @@ function ZendModuleCreator() {
         modelTable >> module/$moduleName/src/Model/$moduleName'Table.php'
         view
         module >> module/$moduleName/src/Module.php
-        nextStep $1
+        nextStep $moduleName
     }
     main
 }
