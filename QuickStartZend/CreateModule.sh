@@ -56,7 +56,7 @@ function ZendModuleCreator() {
 
     function controller() {
         controllerName=$moduleName'Controller'   
-        printf "$( cat 'QuickStartZend/templates/controller.txt' )"  $moduleName $moduleName $moduleName $moduleName $moduleName $controllerName $moduleName $routeName
+        printf "$( cat 'QuickStartZend/templates/controller.txt' )"  $moduleName $moduleName $moduleName $moduleName $moduleName $moduleName $moduleName $controllerName $moduleName $routeName
     }
 
     # function model() {
