@@ -1,6 +1,7 @@
 <?php 
 namespace Category\Controller; 
 
+use Category\Form\CategoryForm;
 use Category\Model\CategoryTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

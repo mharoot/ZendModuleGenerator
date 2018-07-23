@@ -7,7 +7,7 @@ class UserForm extends Form
 {
 	public function __construct($name = null) {
 		// We will ignore the name provided to the constructor
-		parent::_construct('user');
+		parent::__construct('user');
 
 		$this->add([
 			'name' => 'user_id',

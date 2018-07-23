@@ -7,7 +7,7 @@ class SupplierForm extends Form
 {
 	public function __construct($name = null) {
 		// We will ignore the name provided to the constructor
-		parent::_construct('supplier');
+		parent::__construct('supplier');
 
 		$this->add([
 			'name' => 'SupplierID',

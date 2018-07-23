@@ -7,7 +7,7 @@ class ProductForm extends Form
 {
 	public function __construct($name = null) {
 		// We will ignore the name provided to the constructor
-		parent::_construct('product');
+		parent::__construct('product');
 
 		$this->add([
 			'name' => 'ProductID',

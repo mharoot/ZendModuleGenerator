@@ -1,6 +1,7 @@
 <?php 
 namespace User\Controller; 
 
+use User\Form\UserForm;
 use User\Model\UserTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

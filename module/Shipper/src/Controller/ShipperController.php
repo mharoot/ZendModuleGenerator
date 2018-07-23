@@ -1,6 +1,7 @@
 <?php 
 namespace Shipper\Controller; 
 
+use Shipper\Form\ShipperForm;
 use Shipper\Model\ShipperTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

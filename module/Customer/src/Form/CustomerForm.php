@@ -7,7 +7,7 @@ class CustomerForm extends Form
 {
 	public function __construct($name = null) {
 		// We will ignore the name provided to the constructor
-		parent::_construct('customer');
+		parent::__construct('customer');
 
 		$this->add([
 			'name' => 'CustomerID',

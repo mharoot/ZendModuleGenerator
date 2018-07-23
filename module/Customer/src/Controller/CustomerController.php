@@ -1,6 +1,7 @@
 <?php 
 namespace Customer\Controller; 
 
+use Customer\Form\CustomerForm;
 use Customer\Model\CustomerTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

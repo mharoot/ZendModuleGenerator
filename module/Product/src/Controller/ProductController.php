@@ -1,6 +1,7 @@
 <?php 
 namespace Product\Controller; 
 
+use Product\Form\ProductForm;
 use Product\Model\ProductTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

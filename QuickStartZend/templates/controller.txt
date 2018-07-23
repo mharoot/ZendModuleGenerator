@@ -1,6 +1,7 @@
 <?php 
 namespace %s\Controller; 
 
+use %s\Form\%sForm;
 use %s\Model\%sTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

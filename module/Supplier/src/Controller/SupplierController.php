@@ -1,6 +1,7 @@
 <?php 
 namespace Supplier\Controller; 
 
+use Supplier\Form\SupplierForm;
 use Supplier\Model\SupplierTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

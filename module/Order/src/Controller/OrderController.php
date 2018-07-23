@@ -1,6 +1,7 @@
 <?php 
 namespace Order\Controller; 
 
+use Order\Form\OrderForm;
 use Order\Model\OrderTable;
 use Zend\Mvc\Controller\AbstractActionController; 
 use Zend\View\Model\ViewModel; 

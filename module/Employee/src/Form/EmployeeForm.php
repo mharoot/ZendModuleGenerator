@@ -7,7 +7,7 @@ class EmployeeForm extends Form
 {
 	public function __construct($name = null) {
 		// We will ignore the name provided to the constructor
-		parent::_construct('employee');
+		parent::__construct('employee');
 
 		$this->add([
 			'name' => 'EmployeeID',
