@@ -1,0 +1,55 @@
+<?php
+	// module/User/view/user/user/index.phtml:
+	$title = 'My users';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('user', ['action' => 'add']) ?>">Add new user</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>first_name</th>
+		<th>last_name</th>
+		<th>user_name</th>
+		<th>user_password_hash</th>
+		<th>user_email</th>
+		<th>user_active</th>
+		<th>user_activation_hash</th>
+		<th>user_password_reset_hash</th>
+		<th>user_password_reset_timestamp</th>
+		<th>user_rememberme_token</th>
+		<th>user_failed_logins</th>
+		<th>user_last_failed_login</th>
+		<th>user_registration_datetime</th>
+		<th>user_registration_ip</th>
+		<th>user_type</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($users as $user) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($user->first_name) ?></td>
+		<td><?= $this->escapeHtml($user->last_name) ?></td>
+		<td><?= $this->escapeHtml($user->user_name) ?></td>
+		<td><?= $this->escapeHtml($user->user_password_hash) ?></td>
+		<td><?= $this->escapeHtml($user->user_email) ?></td>
+		<td><?= $this->escapeHtml($user->user_active) ?></td>
+		<td><?= $this->escapeHtml($user->user_activation_hash) ?></td>
+		<td><?= $this->escapeHtml($user->user_password_reset_hash) ?></td>
+		<td><?= $this->escapeHtml($user->user_password_reset_timestamp) ?></td>
+		<td><?= $this->escapeHtml($user->user_rememberme_token) ?></td>
+		<td><?= $this->escapeHtml($user->user_failed_logins) ?></td>
+		<td><?= $this->escapeHtml($user->user_last_failed_login) ?></td>
+		<td><?= $this->escapeHtml($user->user_registration_datetime) ?></td>
+		<td><?= $this->escapeHtml($user->user_registration_ip) ?></td>
+		<td><?= $this->escapeHtml($user->user_type) ?></td>
+		<td>
+			<a href="<?= $this->url('user', ['action' => 'edit', 'user_id' => $user->user_id]) ?>">Edit</a>
+			<a href="<?= $this->url('user', ['action' => 'delete', 'user_id' => $user->user_id]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>

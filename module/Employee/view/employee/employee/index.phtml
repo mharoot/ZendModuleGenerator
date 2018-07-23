@@ -1,0 +1,37 @@
+<?php
+	// module/Employee/view/employee/employee/index.phtml:
+	$title = 'My employees';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('employee', ['action' => 'add']) ?>">Add new employee</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>UserID</th>
+		<th>LastName</th>
+		<th>FirstName</th>
+		<th>BirthDate</th>
+		<th>Photo</th>
+		<th>Notes</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($employees as $employee) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($employee->UserID) ?></td>
+		<td><?= $this->escapeHtml($employee->LastName) ?></td>
+		<td><?= $this->escapeHtml($employee->FirstName) ?></td>
+		<td><?= $this->escapeHtml($employee->BirthDate) ?></td>
+		<td><?= $this->escapeHtml($employee->Photo) ?></td>
+		<td><?= $this->escapeHtml($employee->Notes) ?></td>
+		<td>
+			<a href="<?= $this->url('employee', ['action' => 'edit', 'EmployeeID' => $employee->EmployeeID]) ?>">Edit</a>
+			<a href="<?= $this->url('employee', ['action' => 'delete', 'EmployeeID' => $employee->EmployeeID]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>

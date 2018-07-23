@@ -1,0 +1,41 @@
+<?php
+	// module/Supplier/view/supplier/supplier/index.phtml:
+	$title = 'My suppliers';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('supplier', ['action' => 'add']) ?>">Add new supplier</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>UserID</th>
+		<th>SupplierName</th>
+		<th>ContactName</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>PostalCode</th>
+		<th>Country</th>
+		<th>Phone</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($suppliers as $supplier) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($supplier->UserID) ?></td>
+		<td><?= $this->escapeHtml($supplier->SupplierName) ?></td>
+		<td><?= $this->escapeHtml($supplier->ContactName) ?></td>
+		<td><?= $this->escapeHtml($supplier->Address) ?></td>
+		<td><?= $this->escapeHtml($supplier->City) ?></td>
+		<td><?= $this->escapeHtml($supplier->PostalCode) ?></td>
+		<td><?= $this->escapeHtml($supplier->Country) ?></td>
+		<td><?= $this->escapeHtml($supplier->Phone) ?></td>
+		<td>
+			<a href="<?= $this->url('supplier', ['action' => 'edit', 'SupplierID' => $supplier->SupplierID]) ?>">Edit</a>
+			<a href="<?= $this->url('supplier', ['action' => 'delete', 'SupplierID' => $supplier->SupplierID]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>

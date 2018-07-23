@@ -1,0 +1,35 @@
+<?php
+	// module/Order/view/order/order/index.phtml:
+	$title = 'My orders';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('order', ['action' => 'add']) ?>">Add new order</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>CustomerID</th>
+		<th>EmployeeID</th>
+		<th>OrderDate</th>
+		<th>ShipperID</th>
+		<th>OrderStatus</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($orders as $order) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($order->CustomerID) ?></td>
+		<td><?= $this->escapeHtml($order->EmployeeID) ?></td>
+		<td><?= $this->escapeHtml($order->OrderDate) ?></td>
+		<td><?= $this->escapeHtml($order->ShipperID) ?></td>
+		<td><?= $this->escapeHtml($order->OrderStatus) ?></td>
+		<td>
+			<a href="<?= $this->url('order', ['action' => 'edit', 'OrderID' => $order->OrderID]) ?>">Edit</a>
+			<a href="<?= $this->url('order', ['action' => 'delete', 'OrderID' => $order->OrderID]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>

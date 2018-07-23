@@ -1,0 +1,41 @@
+<?php
+namespace Orderdetail; 
+use Zend\Router\Http\Segment;
+// use Zend\ServiceManager\Factory\InvokableFactory;
+
+return [ 
+   /*'controllers' => [
+    'factories' => [ 
+            Controller\OrderdetailController::class => InvokableFactory::class, 
+        ],
+    ],*/
+    'router' => [ 
+            'routes' => [
+                'orderdetail' => [ 
+                    'type' => Segment::class, 
+                    'options' => [ 
+                        'route' => '/orderdetail[/:action[/:id]]', 
+                        'constraints' => [ 
+                            'action' => '[a-zA-Z][a-zA-Z0-9_-]*', 
+                            'id' => '[0-9]+', 
+                        ], 
+                        'defaults' => [ 
+                            'controller' => Controller\OrderdetailController::class,
+                            'action' => 'index', 
+                        ], 
+                    ], 
+                ], 
+            ], 
+        ],
+    'view_manager' => [
+        'template_path_stack' => [ 
+            'orderdetail' => __DIR__ . '/../view', 
+ 		],
+    ],
+    'db' => [
+        'driver'  => 'Pdo',
+        'dsn'     => 'mysql:dbname=emvc;host=localhost;charset=utf8',
+        'username'=> 'root',
+        'password'=> 'password',
+    ],
+];

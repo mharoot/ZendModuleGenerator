@@ -1,0 +1,39 @@
+<?php
+	// module/Customer/view/customer/customer/index.phtml:
+	$title = 'My customers';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('customer', ['action' => 'add']) ?>">Add new customer</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>UserID</th>
+		<th>CustomerName</th>
+		<th>ContactName</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>PostalCode</th>
+		<th>Country</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($customers as $customer) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($customer->UserID) ?></td>
+		<td><?= $this->escapeHtml($customer->CustomerName) ?></td>
+		<td><?= $this->escapeHtml($customer->ContactName) ?></td>
+		<td><?= $this->escapeHtml($customer->Address) ?></td>
+		<td><?= $this->escapeHtml($customer->City) ?></td>
+		<td><?= $this->escapeHtml($customer->PostalCode) ?></td>
+		<td><?= $this->escapeHtml($customer->Country) ?></td>
+		<td>
+			<a href="<?= $this->url('customer', ['action' => 'edit', 'CustomerID' => $customer->CustomerID]) ?>">Edit</a>
+			<a href="<?= $this->url('customer', ['action' => 'delete', 'CustomerID' => $customer->CustomerID]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>

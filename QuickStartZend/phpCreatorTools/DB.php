@@ -29,7 +29,7 @@ class DB {
     }
 
     public function getFieldInfo() {
-        $this->query("DESCRIBE $this->tablename");
+        $this->query("DESCRIBE `$this->tablename`");
         $res = $this->fetchAll();
 
         $nodeColumns = [];    
@@ -38,20 +38,23 @@ class DB {
             $temp = $r->Type;
             $type = '';
             $i = 0;
+            $n = strlen($temp);
             
             // extract type
-            while ($temp[$i] != '(') {
+            while ($i < $n && $temp[$i] != '(') {
                 $type.=$temp[$i];
                 $i++;
             }
             $i++;
 
-            // extract size
+            // extract size - may not have one like text or date
             $sizeAsStr = '';
-            $n = strlen($temp);
-            while ($i < $n && $temp[$i] != ',' && $temp[$i] != ')') {
-                $sizeAsStr .= $temp[$i];
-                $i++;
+            
+            if (isset($temp[$i])) {
+                while ($i < $n && $temp[$i] != ',' && $temp[$i] != ')') {
+                    $sizeAsStr .= $temp[$i];
+                    $i++;
+                }
             }
 
             switch($type) {

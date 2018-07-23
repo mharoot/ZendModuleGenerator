@@ -1,0 +1,31 @@
+<?php
+	// module/Orderdetail/view/orderdetail/orderdetail/index.phtml:
+	$title = 'My orderdetails';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('orderdetail', ['action' => 'add']) ?>">Add new orderdetail</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>OrderID</th>
+		<th>ProductID</th>
+		<th>Quantity</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($orderdetails as $orderdetail) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($orderdetail->OrderID) ?></td>
+		<td><?= $this->escapeHtml($orderdetail->ProductID) ?></td>
+		<td><?= $this->escapeHtml($orderdetail->Quantity) ?></td>
+		<td>
+			<a href="<?= $this->url('orderdetail', ['action' => 'edit', 'OrderDetailID' => $orderdetail->OrderDetailID]) ?>">Edit</a>
+			<a href="<?= $this->url('orderdetail', ['action' => 'delete', 'OrderDetailID' => $orderdetail->OrderDetailID]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>

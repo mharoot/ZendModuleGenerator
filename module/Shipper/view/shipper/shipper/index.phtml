@@ -1,0 +1,29 @@
+<?php
+	// module/Shipper/view/shipper/shipper/index.phtml:
+	$title = 'My shippers';
+	$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+	<a href="<?= $this->url('shipper', ['action' => 'add']) ?>">Add new shipper</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>ShipperName</th>
+		<th>Phone</th>
+		<th>&nbsp;</th>
+	</tr>
+<?php foreach ($shippers as $shipper) : ?>
+	<tr>
+		<td><?= $this->escapeHtml($shipper->ShipperName) ?></td>
+		<td><?= $this->escapeHtml($shipper->Phone) ?></td>
+		<td>
+			<a href="<?= $this->url('shipper', ['action' => 'edit', 'ShipperID' => $shipper->ShipperID]) ?>">Edit</a>
+			<a href="<?= $this->url('shipper', ['action' => 'delete', 'ShipperID' => $shipper->ShipperID]) ?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>
