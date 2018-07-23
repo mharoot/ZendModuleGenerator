@@ -235,13 +235,13 @@ function ZendModuleCreator() {
     function main() {
         construct
         directories
-        controller >> ../module/$moduleName/src/Controller/$moduleName'Controller.php'
+        controller >> module/$moduleName/src/Controller/$moduleName'Controller.php'
         
-        moduleConfig2 >> ../module/$moduleName/config/module.config.php
-        # model >> ../module/$moduleName/src/Model/$moduleName.php
-        modelTable >> ../module/$moduleName/src/Model/$moduleName'Table.php'
+        moduleConfig2 >> module/$moduleName/config/module.config.php
+        # model >> module/$moduleName/src/Model/$moduleName.php
+        modelTable >> module/$moduleName/src/Model/$moduleName'Table.php'
         view
-        module >> ../module/$moduleName/src/Module.php
+        module >> module/$moduleName/src/Module.php
         nextStep $1
     }
     main
